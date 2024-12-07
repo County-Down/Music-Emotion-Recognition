@@ -33,9 +33,6 @@ The code is stored in the `Neuro_Networks` folder.<br/>
 ## 3.Usage
 ### 3.1 Data Preprocessing
 You can change the main parameters in this section:<br/>
-We will use random forest to evaluate the importance of features for dimensionality reduction:<br/>
-![Pmemo-Arousal(mean)](https://github.com/user-attachments/assets/a92857d9-db31-4f03-86fb-4898e48e53a1)
-main:<br/>
 ```
 if __name__ == "__main__":
     # file path 
@@ -48,26 +45,28 @@ if __name__ == "__main__":
     Data_Preprocessing(dynamic_features,dynamic_annotations,'Arousal(mean)',score,'Pmemo').train_model() # Start processing the data
     Data_Preprocessing(dynamic_features,dynamic_annotations,'Valence(mean)',score,'Pmemo').train_model() # Start processing the data
 ```
+We will use random forest to evaluate the importance of features for dimensionality reduction:<br/>
+![Pmemo-Arousal(mean)](https://github.com/user-attachments/assets/a92857d9-db31-4f03-86fb-4898e48e53a1)<br/>
 After running the code, two folders should appear：<br/>
 ![{078E666A-DA7A-44F9-94AF-0596DC0ADF06}](https://github.com/user-attachments/assets/0345ef57-de7a-4991-bbf0-4fab5ffa85be)<br/>
-frameTime_count：Store the length of time for each song in the dataset.<br/>
+frameTime_count:Store the length of time for each song in the dataset.<br/>
 randomforest:Store reduced data sets.<br/>
 
 ### 3.2 Neuro Networks:
   `Main. m` is our main function that we run the code by running it.<br/>
-The target variable refers to the data of the target variable<br/>
+The `target_data` refers to the `emotion values` of the dataset<br/>
 ```
 target_data=table2array(readtable(['./',dataset_name,'/Dataset/',dataset_name,'/dynamic_annotations.csv']));
 ```
-The frameTime_count_all is the time node data for each song of the dataset output from 3.1:
+The `frameTime_count_all` is the time node data for each song of the dataset output from 3.1:
 ```
 frameTime_count_all=xlsread(['./',dataset_name,'/frameTime_count/frameTime_count_all.xlsx']);
 ```
-dynamic_features_analyze is the preprocessed dataset output from 3.1：
+The `dynamic_features_analyze` is the preprocessed dataset output from 3.1：
 ```
 dynamic_features_analyze=xlsread(['./',dataset_name,'/randomforest/Valence(mean)/dynamic_features_analyze.xlsx']);
 ```
-  We invoke the time series modeling code with the following statement. In this step, We do time series modeling, data normalization, and dataset splitting, which is all encapsulated in dataset_crossvalind.m.<br/>
+  We invoke the time series modeling code with the following statement. In this step, We do time series modeling, data normalization, and dataset splitting, which is all encapsulated in `dataset_crossvalind.m`.<br/>
   ```
     [Train_xNorm,Test_xNorm,Validate_xNorm,Train_yNorm,Test_yNorm,Validate_yNorm,yopt]=dataset_crossvalind(save_folder,target,frameTime_count_all,dynamic_features_analyze,k,numFeatures);
   ```
