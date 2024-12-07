@@ -1,17 +1,29 @@
 # Music-Emotion-Recognition
 This project is based on the research content of dynamic music emotion recognition.<br/>
 
-## 1.Data source:
+## 1.Dataset source
 PMEmo Dataset: http://next.zju.edu.cn/archive/pmemo/<br/>
 DEAM Dataset: https://cvml.unige.ch/databases/DEAM/<br/>
 
-## 2.The overall procedure is divided into two parts:
-`data_preprocessing:`
-     In this part, we adopt Python for data preprocessing and feature dimensionality reduction.<br/>
-     
-`Neuro_Networks:`
+## 2.Operating Environment
+### 2.1 data_preprocessing:
+In this part, we adopt `Jupyter Notebook` for data preprocessing and feature dimensionality reduction.<br/>
+Python version:
+     ```
+     Python 3.9.12
+     ```<br/>
+You can use `install -r requirements.txt` to configure the version of the module you need.
+#### Requirements
+```
+pandas==1.4.2
+numpy==1.21.5
+matplotlib==3.5.1
+scikit-learn==1.0.2
+```
+### 2.2 Neuro_Networks:
      In this part, we will use MATLAB to build the neural network for the data processed by data_preprocessing.<br/>
   MATLAB version required 2023 and above.<br/>
+  
 
 ## 3.Neural_Network Code
   `Main. m` is our main function that we run the code by running it.<br/>
