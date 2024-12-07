@@ -21,9 +21,11 @@ matplotlib==3.5.1
 scikit-learn==1.0.2
 ```
 ### 2.2 Neuro_Networks:
-     In this part, we will use MATLAB to build the neural network for the data processed by data_preprocessing.<br/>
-  MATLAB version required 2023 and above.<br/>
-  
+In this part, we will use MATLAB to build the neural network for the data processed by data_preprocessing.<br/>
+The parameters of our device are as follows:<br/>
+operating system:`Ubuntu 16.04.7 LTS`<br/>
+MATLAB:`2023a`<br/>
+GPU:`NVIDIA GeForce RTX 2080 Ti`
 
 ## 3.Neural_Network Code
   `Main. m` is our main function that we run the code by running it.<br/>
