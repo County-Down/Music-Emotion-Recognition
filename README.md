@@ -12,7 +12,7 @@ Python version:
      ```
      Python 3.9.12
      ```<br/>
-You can use `install -r requirements.txt` to configure the version of the module you need.
+You can use `pip install -r requirements.txt` to configure the version of the module you need.
 #### Requirements
 ```
 pandas==1.4.2
